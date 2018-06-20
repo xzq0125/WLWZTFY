@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorCommonBackground"
+    tools:context=".main.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/divider_common_list_1dp"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_common_press_white"
+            android:drawableEnd="@drawable/ic_into"
+            android:drawableRight="@drawable/ic_into"
+            android:onClick="viewQuestion"
+            android:padding="15dp"
+            android:text="看题找题"
+            android:textColor="@color/colorFF333333"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_common_press_white"
+            android:drawableEnd="@drawable/ic_into"
+            android:drawableRight="@drawable/ic_into"
+            android:onClick="answerQuestion"
+            android:padding="15dp"
+            android:text="练习答题"
+            android:textColor="@color/colorFF333333"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_common_press_white"
+            android:drawableEnd="@drawable/ic_into"
+            android:drawableRight="@drawable/ic_into"
+            android:onClick="contactMe"
+            android:padding="15dp"
+            android:text="联系我"
+            android:textColor="@color/colorFF333333"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+</ScrollView>
