@@ -8,21 +8,20 @@ import android.support.annotation.Nullable;
 import com.tfy.wlwztfy.R;
 import com.tfy.wlwztfy.base.BaseActivity;
 
-
-public class FeedbackActivity extends BaseActivity {
+public class CourseActivity extends BaseActivity {
 
     public static void start(Context context) {
-        Intent starter = new Intent(context, FeedbackActivity.class);
+        Intent starter = new Intent(context, CourseActivity.class);
         context.startActivity(starter);
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_feedback;
+        return R.layout.activity_course;
     }
 
     @Override
     protected void initViews(@Nullable Bundle savedInstanceState) {
-        initToolbar("联系我");
+        initToolbar("使用说明");
     }
 }

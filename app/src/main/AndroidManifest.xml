@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tfy.wlwztfy">
 
-
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -20,6 +19,8 @@
         </activity>
         <activity android:name=".biz.ViewQuestionActivity" />
         <activity android:name=".biz.FeedbackActivity" />
+        <activity android:name=".biz.DetailActivity" />
+        <activity android:name=".biz.CourseActivity"/>
     </application>
 
 </manifest>

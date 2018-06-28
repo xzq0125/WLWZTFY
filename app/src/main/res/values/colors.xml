@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#fffd6a27</color>
+    <color name="colorPrimaryDark">#fffd6a27</color>
+    <color name="colorAccent">#fffd6a27</color>
+
+    <color name="themeColor">#fffd6a27</color>
 
     <!--base start-->
     <color name="red">#ffff0000</color>
@@ -17,4 +19,9 @@
     <color name="colorFF333333">#FF333333</color>
     <color name="colorCommonBackground">#ffeeeeee</color>
     <color name="colorLine">#ffe5e5e5</color>
+
+    <!--ripple start-->
+    <color name="ripple_light">#1f000000</color>
+    <color name="ripple_dark">#4dffffff</color>
+    <!--ripple end-->
 </resources>

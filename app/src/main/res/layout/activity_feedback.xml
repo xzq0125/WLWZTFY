@@ -3,21 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".biz.FeedbackActivity">
 
-    <TextView
+    <include layout="@layout/merge_toolbar" />
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:drawableBottom="@drawable/ic_wechat"
-        android:drawablePadding="15dp"
-        android:gravity="center"
-        android:lineSpacingExtra="10dp"
-        android:padding="15dp"
-        android:text="如有建议，可以通过微信反馈给我"
-        android:textColor="@color/colorFF333333"
-        android:textSize="17sp" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableBottom="@drawable/ic_wechat"
+            android:drawablePadding="15dp"
+            android:gravity="center"
+            android:lineSpacingExtra="10dp"
+            android:padding="15dp"
+            android:text="如有建议，可以通过微信反馈给我"
+            android:textColor="@color/colorFF333333"
+            android:textSize="17sp" />
+
+    </FrameLayout>
 
 </LinearLayout>

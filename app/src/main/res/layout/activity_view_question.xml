@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context=".biz.ViewQuestionActivity">
 
+    <include layout="@layout/merge_toolbar" />
+
     <com.tfy.wlwztfy.view.ClearEditText
         android:id="@+id/edt_keyword"
         android:layout_width="match_parent"

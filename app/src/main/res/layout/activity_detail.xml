@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="com.tfy.wlwztfy.biz.DetailActivity">
+
+    <include layout="@layout/merge_toolbar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="题目"
+        android:textColor="#ff333333"
+        android:textSize="16sp" />
+
+    <com.tfy.wlwztfy.view.ClearEditText
+        android:id="@+id/edt_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bg_stroke_line"
+        android:gravity="start"
+        android:hint="请输入题目"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:padding="15dp"
+        android:textColor="#ff333333"
+        android:textColorHint="#ff999999"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="答案"
+        android:textColor="#ff333333"
+        android:textSize="16sp" />
+
+    <com.tfy.wlwztfy.view.ClearEditText
+        android:id="@+id/edt_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bg_stroke_line"
+        android:gravity="start"
+        android:hint="请输入答案"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:padding="15dp"
+        android:textColor="#ff333333"
+        android:textColorHint="#ff999999"
+        android:textSize="16sp" />
+
+</LinearLayout>

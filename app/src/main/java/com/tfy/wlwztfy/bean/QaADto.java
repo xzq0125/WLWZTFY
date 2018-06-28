@@ -21,6 +21,7 @@ import com.tfy.wlwztfy.R;
  */
 public class QaADto {
 
+    public int id;
     public String question;
     public String answer;
 
