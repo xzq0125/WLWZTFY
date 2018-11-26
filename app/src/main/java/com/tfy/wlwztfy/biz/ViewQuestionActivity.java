@@ -3,25 +3,27 @@ package com.tfy.wlwztfy.biz;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
 import com.tfy.wlwztfy.R;
 import com.tfy.wlwztfy.base.BaseActivity;
-import com.tfy.wlwztfy.base.BaseListAdapter;
-import com.tfy.wlwztfy.base.BaseListViewHolder;
+import com.tfy.wlwztfy.base.BaseRecyclerAdapter;
+import com.tfy.wlwztfy.base.BaseRecyclerViewHolder;
 import com.tfy.wlwztfy.bean.QaADto;
 import com.tfy.wlwztfy.json.QAAJSON;
 import com.tfy.wlwztfy.sp.CacheSPManager;
 import com.tfy.wlwztfy.utils.EntitySerializer;
+import com.xzq.divider.Divider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +54,7 @@ public class ViewQuestionActivity extends BaseActivity implements TextWatcher {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapter);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        recyclerView.addItemDecoration(Divider.create(this));
 
         List<QaADto> cacheList = CacheSPManager.getQaList(this);
 
@@ -133,25 +135,26 @@ public class ViewQuestionActivity extends BaseActivity implements TextWatcher {
         return result;
     }
 
-    private final class MyAdapter extends BaseListAdapter<QaADto, MyViewHolder> {
+    private final class MyAdapter extends BaseRecyclerAdapter<QaADto, MyViewHolder> {
 
+        @NonNull
         @Override
-        public MyViewHolder onCreateViewHolder(View itemView) {
+        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, @Nullable View itemView, int viewType) {
             return new MyViewHolder(itemView);
         }
 
         @Override
-        protected int getItemLayoutId() {
+        protected int getItemLayoutId(int viewType) {
             return R.layout.item_qaa;
         }
 
         @Override
-        public void onConvert(MyViewHolder holder, int position, List<Object> payload) {
+        public void onConvert(@NonNull MyViewHolder holder, QaADto data, int position, @NonNull List<Object> payload) {
             holder.setData(getDataAt(position));
         }
     }
 
-    private final class MyViewHolder extends BaseListViewHolder<QaADto> implements View.OnClickListener, View.OnLongClickListener {
+    private final class MyViewHolder extends BaseRecyclerViewHolder<QaADto> implements View.OnClickListener, View.OnLongClickListener {
 
         private final TextView tvItem;
 

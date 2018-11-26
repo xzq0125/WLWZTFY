@@ -20,7 +20,9 @@
         <activity android:name=".biz.ViewQuestionActivity" />
         <activity android:name=".biz.FeedbackActivity" />
         <activity android:name=".biz.DetailActivity" />
-        <activity android:name=".biz.CourseActivity"/>
+        <activity android:name=".biz.CourseActivity" />
+        <activity android:name=".main.TFYActivity" />
+        <activity android:name=".biz.xy.XYActivity"></activity>
     </application>
 
 </manifest>

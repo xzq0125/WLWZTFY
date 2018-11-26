@@ -5,9 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.tfy.wlwztfy.R;
-import com.tfy.wlwztfy.biz.CourseActivity;
-import com.tfy.wlwztfy.biz.FeedbackActivity;
-import com.tfy.wlwztfy.biz.ViewQuestionActivity;
+import com.tfy.wlwztfy.biz.xy.XYActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,15 +16,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void viewQuestion(View view) {
-        ViewQuestionActivity.start(this);
+    public void tfy(View view) {
+        TFYActivity.start(this);
     }
 
-    public void course(View view) {
-        CourseActivity.start(this);
-    }
-
-    public void contactMe(View view) {
-        FeedbackActivity.start(this);
+    public void xy(View view) {
+        XYActivity.start(this);
     }
 }

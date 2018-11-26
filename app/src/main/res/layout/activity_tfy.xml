@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".main.MainActivity">
+    tools:context="com.tfy.wlwztfy.main.TFYActivity">
 
     <TextView
         style="@style/ToolbarTitle"
@@ -12,26 +12,26 @@
         android:layout_height="@dimen/toolbar_height"
         android:background="@drawable/bg_toolbar_normal"
         android:gravity="center"
-        android:text="主页"
+        android:text="同福宴"
         android:textColor="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
+        android:layout_height="wrap_content"
         android:divider="@drawable/divider_common_list_1dp"
         android:orientation="vertical"
-        android:showDividers="middle|end">
+        android:showDividers="middle">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/bg_common_press_white"
-            android:gravity="center"
-            android:onClick="tfy"
+            android:drawableEnd="@drawable/ic_into"
+            android:drawableRight="@drawable/ic_into"
+            android:onClick="viewQuestion"
             android:padding="15dp"
-            android:text="同福宴"
+            android:text="看题找题"
             android:textColor="@color/colorFF333333"
             android:textSize="17sp" />
 
@@ -40,10 +40,24 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/bg_common_press_white"
-            android:gravity="center"
-            android:onClick="xy"
+            android:drawableEnd="@drawable/ic_into"
+            android:drawableRight="@drawable/ic_into"
+            android:onClick="course"
             android:padding="15dp"
-            android:text="侠影"
+            android:text="使用说明"
+            android:textColor="@color/colorFF333333"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_common_press_white"
+            android:drawableEnd="@drawable/ic_into"
+            android:drawableRight="@drawable/ic_into"
+            android:onClick="contactMe"
+            android:padding="15dp"
+            android:text="联系我"
             android:textColor="@color/colorFF333333"
             android:textSize="17sp" />
 
