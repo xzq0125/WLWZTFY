@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.tfy.wlwztfy.biz.xy.XYActivity">
+    tools:context="com.tfy.wlwztfy.biz.xy.QyDetailActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,36 +16,26 @@
             android:layout_height="@dimen/toolbar_height"
             android:background="@drawable/bg_toolbar_normal"
             android:gravity="center"
-            android:text="侠影"
+            android:text="情缘详情"
             android:textColor="@color/white" />
-<!--
+
         <TextView
-            android:id="@+id/btn_qy_list"
+            android:id="@+id/btn_qy_save"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:gravity="center"
             android:padding="15dp"
-            android:text="情缘"
+            android:text="保存"
             android:textColor="@color/white"
-            android:textSize="15sp" />-->
+            android:textSize="15sp" />
 
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_margin="8dp"
-        android:onClick="show"
-        android:text="查看情缘"
-        android:textColor="@color/colorFF333333"
-        android:textSize="16sp" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

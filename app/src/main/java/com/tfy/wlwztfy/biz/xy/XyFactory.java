@@ -559,12 +559,12 @@ public class XyFactory {
         attr.targetId = XYId.mxb2;
         bean.attrList.add(attr);
 
-        //白展堂
+        //展堂
         attr = new XYAttrBean();
         attr.type = AttrType.BAOJI;
         attr.info = "针锋相对";
         attr.value = 2188;
-        attr.targetId = XYId.bzt;
+        attr.targetId = XYId.zt;
         bean.attrList.add(attr);
 
         //美丽

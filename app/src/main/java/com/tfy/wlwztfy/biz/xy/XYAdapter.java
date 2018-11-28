@@ -36,10 +36,8 @@ public class XYAdapter extends BaseRecyclerAdapter<XYBean, XYViewHolder> {
         holder.setData(data);
     }
 
-    public List[] getSelectedXyList() {
-        List[] lists = new List[2];
-        List<XYBean> selectedList = new ArrayList<>();
-        List<Integer> selectedIdList = new ArrayList<>();
+    public List<XYBean> getSelectedXyList() {
+        ArrayList<XYBean> selectedList = new ArrayList<>();
         List<XYBean> list = getData();
         int count = 0;
         for (int i = 0; i < list.size(); i++) {
@@ -47,14 +45,11 @@ public class XYAdapter extends BaseRecyclerAdapter<XYBean, XYViewHolder> {
             if (bean.isSelected) {
                 count++;
                 selectedList.add(bean);
-                selectedIdList.add(bean.id);
             }
             if (count == 6) {
                 break;
             }
         }
-        lists[0] = selectedList;
-        lists[1] = selectedIdList;
-        return lists;
+        return selectedList;
     }
 }

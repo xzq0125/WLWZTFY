@@ -22,7 +22,9 @@
         <activity android:name=".biz.DetailActivity" />
         <activity android:name=".biz.CourseActivity" />
         <activity android:name=".main.TFYActivity" />
-        <activity android:name=".biz.xy.XYActivity"></activity>
+        <activity android:name=".biz.xy.XYActivity" />
+        <activity android:name=".biz.xy.QyDetailActivity" />
+        <activity android:name=".biz.xy.QyListActivity"></activity>
     </application>
 
 </manifest>

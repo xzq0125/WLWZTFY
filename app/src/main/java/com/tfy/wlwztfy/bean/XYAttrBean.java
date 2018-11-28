@@ -14,8 +14,16 @@ public class XYAttrBean {
     public boolean isEnable;//是否激活
     public int targetId;//情缘id
 
-    public boolean isEnable(List<Integer> idList) {
-        isEnable = idList.contains(targetId);
+    public boolean isEnable(List<XYBean> list) {
+        if (list != null) {
+            for (XYBean xy :
+                    list) {
+                if (xy.id == targetId) {
+                    isEnable = true;
+                    break;
+                }
+            }
+        }
         return isEnable;
     }
 }
