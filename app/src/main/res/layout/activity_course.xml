@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.tfy.wlwztfy.biz.CourseActivity">
+    tools:context="com.tfy.wlwztfy.biz.tfy.CourseActivity">
 
     <include layout="@layout/merge_toolbar" />
 
@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:lineSpacingExtra="5dp"
         android:padding="15dp"
-        android:text="看题找题页面，点击右上角添加按钮可以往题库新增一条题目，已入库的题目可以点击进入题目详情更改"
+        android:text="看题找题页面，点击右上角添加按钮可以往题库新增一条题目，已入库的题目可以点击进入题目详情更改，长按题目可以删除"
         android:textColor="#ff333333"
         android:textSize="17sp" />
 

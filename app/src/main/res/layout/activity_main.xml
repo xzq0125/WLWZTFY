@@ -43,7 +43,7 @@
             android:gravity="center"
             android:onClick="xy"
             android:padding="15dp"
-            android:text="侠影"
+            android:text="侠影情缘"
             android:textColor="@color/colorFF333333"
             android:textSize="17sp" />
 

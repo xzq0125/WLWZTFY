@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context=".biz.ViewQuestionActivity">
+    tools:context=".biz.tfy.ViewQuestionActivity">
 
     <include layout="@layout/merge_toolbar" />
 

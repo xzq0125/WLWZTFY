@@ -6,6 +6,7 @@ import android.widget.TextView;
 import com.tfy.wlwztfy.R;
 import com.tfy.wlwztfy.base.BaseRecyclerViewHolder;
 import com.tfy.wlwztfy.bean.XYBean;
+import com.tfy.wlwztfy.dialog.QyAttrDialog;
 import com.tfy.wlwztfy.utils.ToastUtils;
 
 import java.util.List;
@@ -15,15 +16,17 @@ import java.util.List;
  * Created by Tse on 2018/11/25.
  */
 
-public class XYViewHolder extends BaseRecyclerViewHolder<XYBean> implements View.OnClickListener {
+public class XYViewHolder extends BaseRecyclerViewHolder<XYBean> implements View.OnClickListener, View.OnLongClickListener {
 
     private TextView tvName;
     private XYAdapter adapter;
+    private QyAttrDialog dialog;
 
     public XYViewHolder(View itemView) {
         super(itemView);
         tvName = itemView.findViewById(R.id.tv_xyName);
         tvName.setOnClickListener(this);
+        tvName.setOnLongClickListener(this);
     }
 
     @Override
@@ -55,5 +58,15 @@ public class XYViewHolder extends BaseRecyclerViewHolder<XYBean> implements View
 
     public void setAdapter(XYAdapter adapter) {
         this.adapter = adapter;
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        if (dialog == null) {
+            dialog = new QyAttrDialog(v.getContext());
+        }
+        dialog.setAttr(data.name, data.getQyString());
+        dialog.show();
+        return false;
     }
 }

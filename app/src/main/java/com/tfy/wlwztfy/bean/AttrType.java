@@ -20,4 +20,22 @@ public class AttrType {
     public static final int QUANJINGTONG = 10;
     public static final int QUANKANGXING= 11;
 
+    public static String getString(int type){
+        switch (type){
+            case GONGJI:return "攻击";
+            case FANGYU:return "防御";
+            case SHENGMING:return "生命";
+            case ZHENQI:return "真气";
+            case MINGZHONG:return "命中";
+            case DUOSHAN:return "躲闪";
+            case BAOJI:return "暴击";
+            case BAOKANG:return "暴抗";
+            case BAOSHANGJIA:return "暴伤加成";
+            case BAOSHANGJIAN:return "暴伤减免";
+            case QUANJINGTONG:return "全精通";
+            case QUANKANGXING:return "全抗性";
+        }
+        return "";
+    }
+
 }

@@ -1,10 +1,11 @@
 package com.tfy.wlwztfy.biz.xy;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.tfy.wlwztfy.R;
@@ -20,9 +21,10 @@ import java.util.List;
 
 public class QyDetailActivity extends BaseActivity implements View.OnClickListener {
 
-    public static void start(Activity context, String json) {
+    public static void start(Context context, String json, String title) {
         Intent starter = new Intent(context, QyDetailActivity.class);
         starter.putExtra("json", json);
+        starter.putExtra("title", title);
         context.startActivity(starter);
     }
 
@@ -33,7 +35,9 @@ public class QyDetailActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     protected void initViews(@Nullable Bundle savedInstanceState) {
+        initToolbar("我的情缘方案");
         json = getIntent().getStringExtra("json");
+        title = getIntent().getStringExtra("title");
         findViewById(R.id.btn_qy_save).setOnClickListener(this);
         viewPager = findViewById(R.id.viewpager);
         viewPager.setAdapter(adapter);
@@ -70,6 +74,7 @@ public class QyDetailActivity extends BaseActivity implements View.OnClickListen
                     hasAdded = true;
                     break;
                 }
+                cacheIdList.clear();
             }
         }
 
@@ -78,11 +83,22 @@ public class QyDetailActivity extends BaseActivity implements View.OnClickListen
         }
 
         adapter.setData(cacheList);
+        viewPager.setCurrentItem(findIndex(), false);
+    }
+
+    private int findIndex() {
+        for (int i = 0; i < cacheList.size(); i++) {
+            QyDetailBean b = cacheList.get(i);
+            if (TextUtils.equals(b.name, title)) {
+                return i;
+            }
+        }
+        return 0;
     }
 
     @Override
     public void onClick(View v) {
-        if (detailBean != null && detailBean.list != null && !detailBean.list.isEmpty()) {
+        if (detailBean != null && detailBean.list != null && detailBean.list.size() == 6) {
             CacheSPManager.putQyList(this, cacheList);
             ToastUtils.showToastAtCenter("保存成功");
         }
@@ -92,6 +108,7 @@ public class QyDetailActivity extends BaseActivity implements View.OnClickListen
     QyDetailAdapter adapter = new QyDetailAdapter();
     QyDetailBean detailBean;
     String json;
+    String title;
     List<QyDetailBean> cacheList;
 
 }

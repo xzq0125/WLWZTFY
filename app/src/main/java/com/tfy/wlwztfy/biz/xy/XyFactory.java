@@ -15,10 +15,13 @@ import java.util.List;
 
 public class XyFactory {
 
+    static List<XYBean> list = new ArrayList<>();
 
     public static List<XYBean> getXyList() {
 
-        List<XYBean> list = new ArrayList<>();
+        if (!list.isEmpty()) {
+            return list;
+        }
 
         //==========佟湘玉=============//
         XYBean bean = new XYBean();

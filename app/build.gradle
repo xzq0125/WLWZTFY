@@ -12,7 +12,7 @@ android {
     }
 
     signingConfigs {
-        Release {
+        release {
             keyAlias "tfy"
             keyPassword "123456"
             storeFile file("../wlwztfy.jks")
@@ -22,9 +22,13 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.Release
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            signingConfig signingConfigs.release
+            minifyEnabled false
         }
     }
 

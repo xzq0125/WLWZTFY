@@ -17,11 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".biz.ViewQuestionActivity" />
+        <activity android:name=".biz.tfy.ViewQuestionActivity" />
         <activity android:name=".biz.FeedbackActivity" />
-        <activity android:name=".biz.DetailActivity" />
-        <activity android:name=".biz.CourseActivity" />
-        <activity android:name=".main.TFYActivity" />
+        <activity android:name=".biz.tfy.DetailActivity" />
+        <activity android:name=".biz.tfy.CourseActivity" />
+        <activity android:name=".biz.tfy.TFYActivity" />
         <activity android:name=".biz.xy.XYActivity" />
         <activity android:name=".biz.xy.QyDetailActivity" />
         <activity android:name=".biz.xy.QyListActivity"></activity>

@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:focusableInTouchMode="true"
     android:orientation="vertical"
     tools:context="com.tfy.wlwztfy.biz.xy.XYActivity">
 
@@ -11,15 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height">
 
-        <TextView
-            style="@style/ToolbarTitle"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/toolbar_height"
-            android:background="@drawable/bg_toolbar_normal"
-            android:gravity="center"
-            android:text="侠影"
-            android:textColor="@color/white" />
-<!--
+        <include layout="@layout/merge_toolbar" />
+
         <TextView
             android:id="@+id/btn_qy_list"
             android:layout_width="wrap_content"
@@ -28,11 +22,28 @@
             android:layout_alignParentRight="true"
             android:gravity="center"
             android:padding="15dp"
-            android:text="情缘"
+            android:text="历史情缘"
             android:textColor="@color/white"
-            android:textSize="15sp" />-->
+            android:textSize="15sp" />
 
     </RelativeLayout>
+
+    <com.tfy.wlwztfy.view.ClearEditText
+        android:id="@+id/edt_keyword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="请输入侠影名字"
+        android:inputType="text"
+        android:minHeight="50dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColorHint="#ff999999" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -40,13 +51,32 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_margin="8dp"
-        android:onClick="show"
-        android:text="查看情缘"
-        android:textColor="@color/colorFF333333"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="reset"
+            android:text="重选"
+            android:textColor="@color/colorFF333333"
+            android:textSize="16sp" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="show"
+            android:text="查看情缘"
+            android:textColor="@color/colorFF333333"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
 </LinearLayout>

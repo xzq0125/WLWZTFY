@@ -10,14 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height">
 
-        <TextView
-            style="@style/ToolbarTitle"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/toolbar_height"
-            android:background="@drawable/bg_toolbar_normal"
-            android:gravity="center"
-            android:text="情缘详情"
-            android:textColor="@color/white" />
+        <include layout="@layout/merge_toolbar"/>
 
         <TextView
             android:id="@+id/btn_qy_save"

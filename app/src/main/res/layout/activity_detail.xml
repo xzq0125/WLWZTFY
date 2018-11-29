@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context="com.tfy.wlwztfy.biz.DetailActivity">
+    tools:context="com.tfy.wlwztfy.biz.tfy.DetailActivity">
 
     <include layout="@layout/merge_toolbar" />
 

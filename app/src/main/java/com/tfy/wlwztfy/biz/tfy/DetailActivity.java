@@ -1,4 +1,4 @@
-package com.tfy.wlwztfy.biz;
+package com.tfy.wlwztfy.biz.tfy;
 
 import android.app.Activity;
 import android.content.Intent;

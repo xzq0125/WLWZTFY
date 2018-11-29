@@ -4,16 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.tfy.wlwztfy.main.TFYActivity">
+    tools:context="com.tfy.wlwztfy.biz.tfy.TFYActivity">
 
-    <TextView
-        style="@style/ToolbarTitle"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/toolbar_height"
-        android:background="@drawable/bg_toolbar_normal"
-        android:gravity="center"
-        android:text="同福宴"
-        android:textColor="@color/white" />
+    <include layout="@layout/merge_toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"

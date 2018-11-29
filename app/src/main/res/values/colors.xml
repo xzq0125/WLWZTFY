@@ -24,4 +24,9 @@
     <color name="ripple_light">#1f000000</color>
     <color name="ripple_dark">#4dffffff</color>
     <!--ripple end-->
+
+    <color name="color_666666">#ff666666</color>
+    <color name="color_999999">#ff999999</color>
+    <color name="color_cccccc">#ffcccccc</color>
+
 </resources>

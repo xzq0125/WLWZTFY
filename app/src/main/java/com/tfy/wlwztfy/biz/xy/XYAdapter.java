@@ -2,6 +2,7 @@ package com.tfy.wlwztfy.biz.xy;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -51,5 +52,41 @@ public class XYAdapter extends BaseRecyclerAdapter<XYBean, XYViewHolder> {
             }
         }
         return selectedList;
+    }
+
+    public void reset() {
+        boolean needNotify = false;
+        List<XYBean> list = getData();
+        if (list == null) {
+            return;
+        }
+        for (int i = 0; i < list.size(); i++) {
+            XYBean bean = list.get(i);
+            if (bean.isSelected) {
+                needNotify = true;
+                bean.isSelected = false;
+            }
+        }
+        if (needNotify) {
+            notifyDataSetChanged();
+        }
+    }
+
+    public void query(String keyword) {
+        if (TextUtils.isEmpty(keyword)) {
+            setData(XyFactory.getXyList());
+            return;
+        }
+        List<XYBean> result = new ArrayList<>();
+        List<XYBean> list = getData();
+        if (list != null) {
+            for (XYBean xy :
+                    list) {
+                if (xy.name.contains(keyword)) {
+                    result.add(xy);
+                }
+            }
+        }
+        setData(result);
     }
 }
