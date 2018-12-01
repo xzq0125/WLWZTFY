@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * XYAdapter
+ * 侠影列表适配器
  * Created by Tse on 2018/11/25.
  */
 
@@ -33,13 +33,17 @@ public class XYAdapter extends BaseRecyclerAdapter<XYBean, XYViewHolder> {
 
     @Override
     public void onConvert(@NonNull XYViewHolder holder, XYBean data, int position, @NonNull List<Object> payload) {
-        holder.setAdapter(this);
         holder.setData(data);
     }
 
-    public List<XYBean> getSelectedXyList() {
+    /**
+     * 获取选中的侠影
+     *
+     * @return 侠影列表
+     */
+    List<XYBean> getSelectedXyList() {
         ArrayList<XYBean> selectedList = new ArrayList<>();
-        List<XYBean> list = getData();
+        List<XYBean> list = XyFactory.getXyList();
         int count = 0;
         for (int i = 0; i < list.size(); i++) {
             XYBean bean = list.get(i);
@@ -54,7 +58,10 @@ public class XYAdapter extends BaseRecyclerAdapter<XYBean, XYViewHolder> {
         return selectedList;
     }
 
-    public void reset() {
+    /**
+     * 重置
+     */
+    void reset() {
         boolean needNotify = false;
         List<XYBean> list = getData();
         if (list == null) {
@@ -72,7 +79,12 @@ public class XYAdapter extends BaseRecyclerAdapter<XYBean, XYViewHolder> {
         }
     }
 
-    public void query(String keyword) {
+    /**
+     * 根据关键字查询侠影
+     *
+     * @param keyword 关键字
+     */
+    void query(String keyword) {
         if (TextUtils.isEmpty(keyword)) {
             setData(XyFactory.getXyList());
             return;

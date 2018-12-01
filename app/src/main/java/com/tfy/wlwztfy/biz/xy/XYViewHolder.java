@@ -1,5 +1,6 @@
 package com.tfy.wlwztfy.biz.xy;
 
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.TextView;
 
@@ -12,17 +13,16 @@ import com.tfy.wlwztfy.utils.ToastUtils;
 import java.util.List;
 
 /**
- * XYViewHolder
+ * 侠影列表ViewHolder
  * Created by Tse on 2018/11/25.
  */
 
 public class XYViewHolder extends BaseRecyclerViewHolder<XYBean> implements View.OnClickListener, View.OnLongClickListener {
 
     private TextView tvName;
-    private XYAdapter adapter;
     private QyAttrDialog dialog;
 
-    public XYViewHolder(View itemView) {
+    XYViewHolder(View itemView) {
         super(itemView);
         tvName = itemView.findViewById(R.id.tv_xyName);
         tvName.setOnClickListener(this);
@@ -33,6 +33,7 @@ public class XYViewHolder extends BaseRecyclerViewHolder<XYBean> implements View
     public void setData(XYBean data) {
         tvName.setText(data.name);
         tvName.setSelected(data.isSelected);
+        tvName.setTextColor(ContextCompat.getColor(tvName.getContext(), data.getLevColor()));
     }
 
     @Override
@@ -42,7 +43,7 @@ public class XYViewHolder extends BaseRecyclerViewHolder<XYBean> implements View
             tvName.setSelected(false);
             return;
         }
-        List<XYBean> list = adapter.getData();
+        List<XYBean> list = XyFactory.getXyList();
         int count = 0;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).isSelected) {
@@ -54,10 +55,6 @@ public class XYViewHolder extends BaseRecyclerViewHolder<XYBean> implements View
             }
         }
         tvName.setSelected(data.isSelected = !data.isSelected);
-    }
-
-    public void setAdapter(XYAdapter adapter) {
-        this.adapter = adapter;
     }
 
     @Override

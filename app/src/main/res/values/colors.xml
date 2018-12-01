@@ -29,4 +29,9 @@
     <color name="color_999999">#ff999999</color>
     <color name="color_cccccc">#ffcccccc</color>
 
+    <color name="color_lev_1">#ffaa943c</color>
+    <color name="color_lev_2">#ff643d92</color>
+    <color name="color_lev_3">#ff3b84b5</color>
+    <color name="color_lev_4">#ff5ab9aa</color>
+
 </resources>

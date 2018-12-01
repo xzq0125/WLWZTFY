@@ -10,7 +10,7 @@ import java.util.List;
 public class XYAttrBean {
     public int type;//类型
     public int value;//值
-    public String info;//描述信息
+    public String qyTitle;//情缘标题
     public boolean isEnable;//是否激活
     public int targetId;//情缘id
 

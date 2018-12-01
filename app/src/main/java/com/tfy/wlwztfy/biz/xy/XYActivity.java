@@ -18,6 +18,10 @@ import com.tfy.wlwztfy.bean.XYBean;
 import com.tfy.wlwztfy.utils.EntitySerializer;
 import com.xzq.divider.Divider;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 public class XYActivity extends BaseActivity implements TextWatcher, View.OnClickListener {
 
     public static void start(Context context) {
@@ -37,7 +41,6 @@ public class XYActivity extends BaseActivity implements TextWatcher, View.OnClic
 
     @Override
     protected void initViews(@Nullable Bundle savedInstanceState) {
-        initToolbar("侠影列表");
         edtKeyword = findViewById(R.id.edt_keyword);
         findViewById(R.id.btn_qy_list).setOnClickListener(this);
         edtKeyword.addTextChangedListener(this);
@@ -45,7 +48,14 @@ public class XYActivity extends BaseActivity implements TextWatcher, View.OnClic
         recyclerView.setLayoutManager(linearLayoutManager = new LinearLayoutManager(this));
         recyclerView.addItemDecoration(Divider.create(this));
         recyclerView.setAdapter(xyAdapter);
-        xyAdapter.setData(XyFactory.getXyList());
+        List<XYBean> list = XyFactory.getXyList();
+        Collections.sort(list, new Comparator<XYBean>() {
+            @Override
+            public int compare(XYBean o1, XYBean o2) {
+                return o1.lev == o2.lev ? 0 : (o1.lev > o2.lev ? 1 : -1);
+            }
+        });
+        xyAdapter.setData(list);
         recyclerView.post(new Runnable() {
             @Override
             public void run() {
@@ -54,7 +64,7 @@ public class XYActivity extends BaseActivity implements TextWatcher, View.OnClic
                 }
             }
         });
-
+        initToolbar("侠影列表（" + list.size() + "）");
     }
 
     public void show(View view) {
