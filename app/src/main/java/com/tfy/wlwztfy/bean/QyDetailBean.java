@@ -53,22 +53,50 @@ public class QyDetailBean {
                 List<XYAttrBean> attrList = xyBean.attrList;
                 for (int j = 0; j < attrList.size(); j++) {
                     XYAttrBean xy = attrList.get(j);
-                    boolean isEnable = xy.isEnable(list);
-                    if (!isEnable) {
+                    boolean isQyEnable = xy.isQyEnable(list);
+                    if (!isQyEnable) {
                         continue;
                     }
-                    gongji += xy.type == AttrType.GONGJI ? xy.value : 0;
-                    fangyu += xy.type == AttrType.FANGYU ? xy.value : 0;
-                    shengming += xy.type == AttrType.SHENGMING ? xy.value : 0;
-                    zhenqi += xy.type == AttrType.ZHENQI ? xy.value : 0;
-                    mingzhong += xy.type == AttrType.MINGZHONG ? xy.value : 0;
-                    duoshan += xy.type == AttrType.DUOSHAN ? xy.value : 0;
-                    baoji += xy.type == AttrType.BAOJI ? xy.value : 0;
-                    baokang += xy.type == AttrType.BAOKANG ? xy.value : 0;
-                    baoshangjia += xy.type == AttrType.BAOSHANGJIA ? xy.value : 0;
-                    baoshangjian += xy.type == AttrType.BAOSHANGJIAN ? xy.value : 0;
-                    quanjingtong += xy.type == AttrType.QUANJINGTONG ? xy.value : 0;
-                    quankangxing += xy.type == AttrType.QUANKANGXING ? xy.value : 0;
+                    count++;
+                    double rate = 0;
+                    if (xy.type == AttrType.GONGJI) {
+                        gongji += xy.value;
+                        rate = 363 / 120;
+                    } else if (xy.type == AttrType.FANGYU) {
+                        fangyu += xy.value;
+                        rate = 363 / 120;
+                    } else if (xy.type == AttrType.SHENGMING) {
+                        shengming += xy.value;
+                        rate = 174 / 5800;
+                    } else if (xy.type == AttrType.ZHENQI) {
+                        zhenqi += xy.value;
+                        rate = 81 / 510;
+                    } else if (xy.type == AttrType.MINGZHONG) {
+                        mingzhong += xy.value;
+                        rate = 61 / 290;
+                    } else if (xy.type == AttrType.DUOSHAN) {
+                        duoshan += xy.value;
+                        rate = 63 / 90;
+                    } else if (xy.type == AttrType.BAOJI) {
+                        baoji += xy.value;
+                        rate = 54 / 90;
+                    } else if (xy.type == AttrType.BAOKANG) {
+                        baokang += xy.value;
+                        rate = 53 / 290;
+                    } else if (xy.type == AttrType.BAOSHANGJIA) {
+                        baoshangjia += xy.value;
+                        rate = 72 / 26;
+                    } else if (xy.type == AttrType.BAOSHANGJIAN) {
+                        baoshangjian += xy.value;
+                        rate = 72 / 26;
+                    } else if (xy.type == AttrType.QUANJINGTONG) {
+                        quanjingtong += xy.value;
+                        rate = 7 / 3;
+                    } else if (xy.type == AttrType.QUANKANGXING) {
+                        quankangxing += xy.value;
+                        rate = 26 / 11;
+                    }
+                    zhanli += (rate * xy.value);
                 }
             }
         }
@@ -112,4 +140,10 @@ public class QyDetailBean {
         return Arrays.hashCode(values);
     }
 
+    private int count;
+    private int zhanli;
+
+    public String getValue() {
+        return "情缘激活" + count + "，战力+" + zhanli + "\n" + "（模拟战力）";
+    }
 }

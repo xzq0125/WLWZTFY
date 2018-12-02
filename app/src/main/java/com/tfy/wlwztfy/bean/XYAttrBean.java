@@ -14,7 +14,14 @@ public class XYAttrBean {
     public boolean isEnable;//是否激活
     public int targetId;//情缘id
 
-    public boolean isEnable(List<XYBean> list) {
+
+    /**
+     * 情缘是否激活
+     *
+     * @param list 侠影列表（6个一组）
+     * @return 是否激活
+     */
+    public boolean isQyEnable(List<XYBean> list) {
         if (list != null) {
             for (XYBean xy :
                     list) {

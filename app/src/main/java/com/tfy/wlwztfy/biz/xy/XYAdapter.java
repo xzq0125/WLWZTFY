@@ -63,10 +63,7 @@ public class XYAdapter extends BaseRecyclerAdapter<XYBean, XYViewHolder> {
      */
     void reset() {
         boolean needNotify = false;
-        List<XYBean> list = getData();
-        if (list == null) {
-            return;
-        }
+        List<XYBean> list = XyFactory.getXyList();
         for (int i = 0; i < list.size(); i++) {
             XYBean bean = list.get(i);
             if (bean.isSelected) {
@@ -90,7 +87,7 @@ public class XYAdapter extends BaseRecyclerAdapter<XYBean, XYViewHolder> {
             return;
         }
         List<XYBean> result = new ArrayList<>();
-        List<XYBean> list = getData();
+        List<XYBean> list = XyFactory.getXyList();
         if (list != null) {
             for (XYBean xy :
                     list) {

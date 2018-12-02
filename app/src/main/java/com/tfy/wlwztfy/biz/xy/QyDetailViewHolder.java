@@ -14,16 +14,18 @@ import com.tfy.wlwztfy.bean.QyDetailBean;
 
 public class QyDetailViewHolder extends RecyclePagerAdapter.PagerViewHolder<QyDetailBean> {
 
-    TextView tvNames, tvResult;
+    TextView tvNames, tvResult, tvCount;
 
     QyDetailViewHolder(View itemView) {
         super(itemView);
         tvNames = itemView.findViewById(R.id.tv_names);
         tvResult = itemView.findViewById(R.id.tv_result);
+        tvCount = itemView.findViewById(R.id.tv_count);
     }
 
     @Override
     public void setData(QyDetailBean data) {
         data.setText(tvNames, tvResult);
+        tvCount.setText(data.getValue());
     }
 }

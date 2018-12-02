@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 
 import com.tfy.wlwztfy.R;
 import com.tfy.wlwztfy.base.BaseActivity;
@@ -18,8 +19,9 @@ import com.tfy.wlwztfy.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
-public class QyDetailActivity extends BaseActivity implements View.OnClickListener {
+public class QyDetailActivity extends BaseActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
 
     public static void start(Context context, String json, String title) {
         Intent starter = new Intent(context, QyDetailActivity.class);
@@ -39,8 +41,10 @@ public class QyDetailActivity extends BaseActivity implements View.OnClickListen
         json = getIntent().getStringExtra("json");
         title = getIntent().getStringExtra("title");
         findViewById(R.id.btn_qy_save).setOnClickListener(this);
+        tvPoint = findViewById(R.id.tv_point);
         viewPager = findViewById(R.id.viewpager);
         viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(this);
 
         try {
             detailBean = EntitySerializer.deserializerEntity(json, QyDetailBean.class);
@@ -83,14 +87,16 @@ public class QyDetailActivity extends BaseActivity implements View.OnClickListen
         }
 
         adapter.setData(cacheList);
-        viewPager.setCurrentItem(findIndex(), false);
+        int currentIndex = findIndex();
+        viewPager.setCurrentItem(currentIndex, false);
+        onPageSelected(currentIndex);
     }
 
     private int findIndex() {
-        for (int i = 0; i < cacheList.size(); i++) {
-            QyDetailBean b = cacheList.get(i);
+        for (int index = 0; index < cacheList.size(); index++) {
+            QyDetailBean b = cacheList.get(index);
             if (TextUtils.equals(b.name, title)) {
-                return i;
+                return index;
             }
         }
         return 0;
@@ -104,6 +110,7 @@ public class QyDetailActivity extends BaseActivity implements View.OnClickListen
         }
     }
 
+    TextView tvPoint;
     ViewPager viewPager;
     QyDetailAdapter adapter = new QyDetailAdapter();
     QyDetailBean detailBean;
@@ -111,4 +118,20 @@ public class QyDetailActivity extends BaseActivity implements View.OnClickListen
     String title;
     List<QyDetailBean> cacheList;
 
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        tvPoint.setText(String.format(Locale.getDefault(), FORMAT, position + 1, cacheList.size()));
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
+    static final String FORMAT = "%1$s/%2$s";
 }
