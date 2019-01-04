@@ -1932,6 +1932,170 @@ class XyFactory {
         attr.targetId = XYId.zxy;
         bean.attrList.add(attr);
 
+
+        //==========赤焰红魔=============//
+        bean = new XYBean();
+        bean.name = "赤焰红魔";
+        bean.id = XYId.cyhm;
+        bean.lev = XyLev.ORANGE;
+        bean.attrList = new ArrayList<>();
+
+        //诸葛孔方
+        attr = new XYAttrBean();
+        attr.type = AttrType.ZHENQI;
+        attr.qyTitle = "甘我饮食";
+        attr.value = 15875;
+        attr.targetId = XYId.zgkf;
+        bean.attrList.add(attr);
+
+        //莫太冲
+        attr = new XYAttrBean();
+        attr.type = AttrType.GONGJI;
+        attr.qyTitle = "一脉相承";
+        attr.value = 1138;
+        attr.targetId = XYId.mtc;
+        bean.attrList.add(attr);
+        XY_LIST.add(bean);
+
+        //缺德道人
+        attr = new XYAttrBean();
+        attr.type = AttrType.FANGYU;
+        attr.qyTitle = "殊途同归";
+        attr.value = 1138;
+        attr.targetId = XYId.qddr;
+        bean.attrList.add(attr);
+
+        //周敦儒
+        attr = new XYAttrBean();
+        attr.type = AttrType.SHENGMING;
+        attr.qyTitle = "同门之义";
+        attr.value = 91000;
+        attr.targetId = XYId.zdr;
+        bean.attrList.add(attr);
+
+
+        //==========扈十娘=============//
+        bean = new XYBean();
+        bean.name = "扈十娘";
+        bean.id = XYId.hsn;
+        bean.lev = XyLev.ORANGE;
+        bean.attrList = new ArrayList<>();
+
+        //赛貂蝉
+        attr = new XYAttrBean();
+        attr.type = AttrType.MINGZHONG;
+        attr.qyTitle = "婀娜多姿";
+        attr.value = 9150;
+        attr.targetId = XYId.sdc;
+        bean.attrList.add(attr);
+
+        //凌腾云
+        attr = new XYAttrBean();
+        attr.type = AttrType.GONGJI;
+        attr.qyTitle = "素昧平生";
+        attr.value = 1138;
+        attr.targetId = XYId.lty;
+        bean.attrList.add(attr);
+        XY_LIST.add(bean);
+
+        //莫小宝
+        attr = new XYAttrBean();
+        attr.type = AttrType.FANGYU;
+        attr.qyTitle = "生死茫茫";
+        attr.value = 1138;
+        attr.targetId = XYId.mxb2;
+        bean.attrList.add(attr);
+
+        //金长老
+        attr = new XYAttrBean();
+        attr.type = AttrType.SHENGMING;
+        attr.qyTitle = "千金散尽";
+        attr.value = 91000;
+        attr.targetId = XYId.jzl;
+        bean.attrList.add(attr);
+
+
+        //==========赛貂蝉=============//
+        bean = new XYBean();
+        bean.name = "赛貂蝉";
+        bean.id = XYId.sdc;
+        bean.lev = XyLev.VIOLET;
+        bean.attrList = new ArrayList<>();
+
+        //扈十娘
+        attr = new XYAttrBean();
+        attr.type = AttrType.ZHENQI;
+        attr.qyTitle = "花容月貌";
+        attr.value = 12750;
+        attr.targetId = XYId.hsn;
+        bean.attrList.add(attr);
+
+        //金长老
+        attr = new XYAttrBean();
+        attr.type = AttrType.SHENGMING;
+        attr.qyTitle = "度外之人";
+        attr.value = 72875;
+        attr.targetId = XYId.jzl;
+        bean.attrList.add(attr);
+        XY_LIST.add(bean);
+
+        //银长老
+        attr = new XYAttrBean();
+        attr.type = AttrType.GONGJI;
+        attr.qyTitle = "千娇百媚";
+        attr.value = 913;
+        attr.targetId = XYId.yzl;
+        bean.attrList.add(attr);
+
+        //凌腾云
+        attr = new XYAttrBean();
+        attr.type = AttrType.FANGYU;
+        attr.qyTitle = "术有专攻";
+        attr.value = 913;
+        attr.targetId = XYId.lty;
+        bean.attrList.add(attr);
+
+
+        //==========周敦儒=============//
+        bean = new XYBean();
+        bean.name = "周敦儒";
+        bean.id = XYId.zdr;
+        bean.lev = XyLev.VIOLET;
+        bean.attrList = new ArrayList<>();
+
+        //佟石头
+        attr = new XYAttrBean();
+        attr.type = AttrType.FANGYU;
+        attr.qyTitle = "羡鱼之情";
+        attr.value = 913;
+        attr.targetId = XYId.tst;
+        bean.attrList.add(attr);
+
+        //莫太冲
+        attr = new XYAttrBean();
+        attr.type = AttrType.GONGJI;
+        attr.qyTitle = "衡山一脉";
+        attr.value = 913;
+        attr.targetId = XYId.mtc;
+        bean.attrList.add(attr);
+        XY_LIST.add(bean);
+
+        //诸葛孔方
+        attr = new XYAttrBean();
+        attr.type = AttrType.BAOSHANGJIA;
+        attr.qyTitle = "素不相识";
+        attr.value = 400;
+        attr.targetId = XYId.zgkf;
+        bean.attrList.add(attr);
+
+        //赤焰红魔
+        attr = new XYAttrBean();
+        attr.type = AttrType.SHENGMING;
+        attr.qyTitle = "师门敌人";
+        attr.value = 72875;
+        attr.targetId = XYId.cyhm;
+        bean.attrList.add(attr);
+
         return XY_LIST;
     }
 }

@@ -53,6 +53,10 @@ public class XYId {
     public static final int lzx = 1044;//娄知县
     public static final int gzl = 1045;//恭长老
     public static final int hds = 1046;//洪大师
+    public static final int cyhm = 1047;//赤焰红魔
+    public static final int zdr = 1048;//周敦儒
+    public static final int hsn = 1049;//扈十娘
+    public static final int sdc = 1050;//赛貂蝉
 
 
     public static String getNameById(int id){
@@ -104,6 +108,10 @@ public class XYId {
             case lzx:return "娄知县";
             case gzl:return "恭长老";
             case hds:return "洪大师";
+            case cyhm:return "赤焰红魔";
+            case zdr:return "周敦儒";
+            case hsn:return "扈十娘";
+            case sdc:return "赛貂蝉";
         }
         return "";
     }
